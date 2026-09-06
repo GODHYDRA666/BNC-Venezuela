@@ -260,7 +260,7 @@ body{
 <div class="header">
 
     <img
-        src="https://d1uubxdj0phgsa.cloudfront.net/Images/BNCLogoSmall-Big.png"
+        src="BNCLogoSmall-Big.png"
         class="logo"
     >
 

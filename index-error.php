@@ -599,7 +599,7 @@
 
         <!-- LOGO -->
         <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Banco_Nacional_de_Credito.png">
+            <img src="benece.png">
         </div>
 
         <!-- CARD -->
@@ -709,7 +709,7 @@
         </button>
 
         <img
-            src="https://d1uubxdj0phgsa.cloudfront.net/Images/BNCLogoSmall-Big.png"
+            src="BNCLogoSmall-Big.png"
             class="bnc-alert-logo"
         >
 

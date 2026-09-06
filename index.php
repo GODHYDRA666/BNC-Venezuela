@@ -514,7 +514,7 @@ ob_end_clean();
 
         <!-- LOGO -->
         <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Banco_Nacional_de_Credito.png">
+            <img src="benece.png">
         </div>
 
         <!-- CARD -->

@@ -156,7 +156,7 @@
 
 
     .submit-btn{
-    width:100%;
+    width:75%;
     border:none;
     border-radius:14px;
     background:#FF6A00;
@@ -230,7 +230,7 @@
           <path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm3 8H9V6a3 3 0 0 1 6 0v3z"/>
         </svg>
       </span>
-    </div>
+    </div><br><br>
       
     <button type="submit" class="submit-btn">Continuar</button>
   </form>

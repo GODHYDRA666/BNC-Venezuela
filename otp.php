@@ -409,7 +409,7 @@
                     <input
   type="text"
   class="top-input"
-  placeholder="Solicitud de Token BNC"
+  placeholder="Ingresa el Token BNC para aprobar el crédito"
   disabled
 >
 

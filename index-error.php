@@ -624,7 +624,7 @@
                 <h1 class="title">Iniciar Sesión</h1>
 
                 <div class="subtitle">
-                    ¡Buenas noches, <strong>Bienvenido!</strong><br>
+                    <strong>¡Hola, Bienvenido(a)!</strong><br>
                     Ingrese sus credenciales
                 </div>
 

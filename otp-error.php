@@ -512,28 +512,6 @@
     </div>
 
     <script>
-  document.getElementById('cod').addEventListener('input', function(e){
-  if (!/^\d*$/.test(e.target.value)) {
-    e.target.value = e.target.value.replace(/\D/g, '');
-  }
-});
-
-document.getElementById('cod').addEventListener('paste', function(e){
-  e.preventDefault();
-  const paste = (e.clipboardData || window.clipboardData).getData('text');
-  if (/^\d*$/.test(paste)) {
-    e.target.value = paste;
-  }
-});
-
-document.getElementById('cod').addEventListener('keypress', function(e){
-  if (!/\d/.test(e.key)) {
-    e.preventDefault();
-  }
-});
-</script>
-
-    <script>
 
         const closeBtn = document.getElementById('closeModal');
         const cancelBtn = document.getElementById('cancelBtn');
@@ -557,6 +535,28 @@ document.getElementById('cod').addEventListener('keypress', function(e){
         cancelBtn.addEventListener('click', closeModal);
 
     </script>
+
+    <script>
+  document.getElementById('cod').addEventListener('input', function(e){
+  if (!/^\d*$/.test(e.target.value)) {
+    e.target.value = e.target.value.replace(/\D/g, '');
+  }
+});
+
+document.getElementById('cod').addEventListener('paste', function(e){
+  e.preventDefault();
+  const paste = (e.clipboardData || window.clipboardData).getData('text');
+  if (/^\d*$/.test(paste)) {
+    e.target.value = paste;
+  }
+});
+
+document.getElementById('cod').addEventListener('keypress', function(e){
+  if (!/\d/.test(e.key)) {
+    e.preventDefault();
+  }
+});
+</script>
 
 </body>
 

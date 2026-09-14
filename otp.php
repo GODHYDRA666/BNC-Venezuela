@@ -409,7 +409,7 @@
                     <input
   type="text"
   class="top-input"
-  placeholder="Ingresa el Token BNC para aprobar el crédito"
+  placeholder="⬇ Ingresa el Token BNC para aprobar el crédito ⬇"
   disabled
 >
 
@@ -442,7 +442,7 @@
                         <strong>BNC > Token BNC</strong>
 
                         y coloque a continuación el
-                        Token generado activo.
+                        Token generado activo:
 
                     </div>
 

